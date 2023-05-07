@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-xyr+ry6lj#-cv74t+51n&gu3@#5tobvr^1up7x)_#)ns4nw-w!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -134,3 +134,4 @@ EMAIL_PORT = 587
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
