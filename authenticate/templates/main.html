@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+
+{% block title %}
+    <title> Authentication </title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="main-box">
+        {% for message in messages %}
+            <div class="main_msg" role="alert">
+                <strong> </strong> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+
+        <h1 style="color:dark grey;font-family:verdana;"> User Authentication </h1>
+
+        {% if user.is_authenticated %}
+            <h3 style="color:purple;font-family:Arial, Helvetica, sans-serif;">Hello {{fname}}</h3>
+            <h4 style="color:green;font-family:verdana;">You're Successfully Logged In.</h4>
+            <button type="submit" class="button button-33"> <a href="signout/">SignOut</a> </button>
+        {% else %}
+            <button type="submit" class="button button-33 "> <a href="signin/">SignIn</a> </button>
+        {% endif %}
+
+    </div>   
+
+{% endblock %}
+

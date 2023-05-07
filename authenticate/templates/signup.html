@@ -1,0 +1,52 @@
+{% extends 'master.html' %}
+
+{% block title %}
+    <title>SignUp page</title>
+{% endblock %}
+
+{% block content %}
+    <div class="signup-box">
+
+        {% for message in messages %}
+            <div class="msg1" role="alert">
+                <strong> </strong> {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        {% endfor %}
+
+        
+        <h1 style="color:dark grey;font-family:verdana;">SignUp</h1>
+        
+        <form action="/signup/" method="POST">
+        {% csrf_token %}
+            <label>Username</label>
+            <input type="text" id="uname" name="uname" placeholder="Create a username (Only Letters and Numeric)" Required>
+            <br>
+
+            <label>Firstname</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter Your First Name" Required>
+            <br>
+            
+            <label>Lastname</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name" Required>
+            <br>
+            
+            <label>Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email Address" Required>
+            <br>
+            
+            <label>Password</label>
+            <input type="password" id="pass1" name="pass1" placeholder="Create a Password" Required>
+            <br>
+            
+            <label>Confirm Password</label>
+            <input type="password" id="c_pass" name="c_pass" placeholder="Confirm Your Password" Required> 
+            <br>
+
+            <button class="button button1" type="submit">Sign Up</button>
+        </form>
+
+    </div>
+{% endblock %}
