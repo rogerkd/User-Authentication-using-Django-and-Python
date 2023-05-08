@@ -155,6 +155,7 @@ def forgot_password(request):
             if User.objects.filter(email=mymail).first():
 
                 user = User.objects.get(email=mymail)
+                print(user.pk)
 
                 current_site = get_current_site(request)
                 email_subject = "@ AIEngine - Password Reset!!"
