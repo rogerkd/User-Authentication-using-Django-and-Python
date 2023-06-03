@@ -107,8 +107,8 @@ def signin(request):
 
             return render(request, 'main.html', {'fname':fname})
 
-        elif user is None:
-            messages.error(request, "Invalid Inputs!!", {'x':"msg1"})
+        else:
+            messages.error(request, "Invalid Inputs!!")
             return redirect('signin')
 
     return render(request, "signin.html")
@@ -155,7 +155,7 @@ def forgot_password(request):
             if User.objects.filter(email=mymail).first():
 
                 user = User.objects.get(email=mymail)
-                print(user.pk)
+                
 
                 current_site = get_current_site(request)
                 email_subject = "@ AIEngine - Password Reset!!"
